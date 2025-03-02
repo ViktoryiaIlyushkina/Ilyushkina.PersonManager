@@ -1,1 +1,1 @@
-# Ilyushkina.PersonManager.ConsoleUI
+# Ilyushkina.PersonManager
