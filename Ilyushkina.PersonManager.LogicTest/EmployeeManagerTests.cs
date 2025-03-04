@@ -14,7 +14,7 @@ namespace Ilyushkina.PersonManager.LogicTest
         private readonly IEmployeeManager _employeeManager;
 
         // с использованием DI
-        //public EmployeeManagerTests() 
+        //public EmployeeManagerTests()
         //{
         //    var serviceProvider = new ServiceCollection()
         //    .AddDbContext<ApplicationContext>(options =>
@@ -28,14 +28,15 @@ namespace Ilyushkina.PersonManager.LogicTest
         //    //.AddScoped<IEmployeeManager, EmployeeManager>()
         //    .BuildServiceProvider();
 
-        //    _context  = serviceProvider.GetRequiredService<ApplicationContext>();
+        //    _context = serviceProvider.GetRequiredService<ApplicationContext>();
         //    _employeeManager = new EmployeeManager(_context);
         //}
 
         public EmployeeManagerTests()
         {
+           var guid = Guid.NewGuid();
             var options = new DbContextOptionsBuilder<ApplicationContext>()
-             .UseInMemoryDatabase(databaseName: "EmployeeManagerInMemoryDatabase")
+             .UseInMemoryDatabase(databaseName: $"{guid}_EmployeeManagerInMemoryDatabase")
              .Options;
             _context = new ApplicationContext(options);
             _employeeManager = new EmployeeManager(_context);

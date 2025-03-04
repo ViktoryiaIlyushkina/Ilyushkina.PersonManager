@@ -3,6 +3,8 @@ using Ilyushkina.PersonManager.Data.Models;
 using Ilyushkina.PersonManager.Logic.Interfaces;
 using Ilyushkina.PersonManager.Logic.Managers;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.DependencyInjection;
+using System.Data.Entity;
 
 namespace Ilyushkina.PersonManager.ConsoleUI
 {
@@ -10,10 +12,18 @@ namespace Ilyushkina.PersonManager.ConsoleUI
     {
         static async Task Main(string[] args)
         {
-            var options = new DbContextOptionsBuilder<ApplicationContext>()
-             .UseSqlite("Data Source=helloapp.db")
-             .Options;
-            ApplicationContext context = new ApplicationContext(options);
+            //var serviceProvider = new ServiceCollection()
+            //    .AddDbContext<ApplicationContext>(options =>
+            //    options.UseSqlite("Data Source=helloapp.db"))
+            //    .AddScoped<IEmployeeManager, EmployeeManager>()
+            //    .BuildServiceProvider();
+
+            //var context = serviceProvider.GetRequiredService<ApplicationContext>();
+            //var employeeManager = serviceProvider.GetRequiredService<IEmployeeManager>();
+
+            var options = new DbContextOptionsBuilder<ApplicationContext>();
+            options.UseSqlite("Data Source=helloapp.db");
+            ApplicationContext context = new ApplicationContext(options.Options);
             IEmployeeManager employeeManager = new EmployeeManager(context);
 
             Person tom = new Person { Name = "Tom", Age = 33 };
