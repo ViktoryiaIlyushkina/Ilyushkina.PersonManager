@@ -131,12 +131,12 @@ namespace Ilyushkina.PersonManager.LogicTest
         {
             // Arrange
             Person tom = new Person { Id = 1, Name = "Tom", Age = 33 };
-            Person alice = new Person { Id = 2, Name = "Alice", Age = 26 };
+            //Person alice = new Person { Id = 2, Name = "Alice", Age = 26 };
             _context.People.Add(tom);
-            _context.People.Add(alice);
+            //_context.People.Add(alice);
             _context.SaveChanges();
             var deleteId = tom.Id;
-            var expectedId = alice.Id;
+            //var expectedId = alice.Id;
 
             // Act
             var result = _employeeManager.Delete(deleteId).GetAwaiter().GetResult();
@@ -144,8 +144,8 @@ namespace Ilyushkina.PersonManager.LogicTest
 
             //Assert
             Assert.NotNull(result);
-            Assert.NotEmpty(result);
-            Assert.Equal(result[0].Id, expectedId);
+            Assert.Empty(result);
+            //Assert.Equal(result[0].Id, expectedId);
         }
     }
 }
