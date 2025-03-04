@@ -55,9 +55,7 @@ namespace Ilyushkina.PersonManager.LogicTest
             _context.People.Add(tom);
             _context.People.Add(alice);
             _context.SaveChanges();
-            var expectedList = new List<Person>();
-            expectedList.Add(tom);
-            expectedList.Add(alice);
+
 
             // Act
             //IEmployeeManager employeeManager = new EmployeeManager(context);
@@ -66,8 +64,9 @@ namespace Ilyushkina.PersonManager.LogicTest
             //Assert
             Assert.NotEmpty(result);
             Assert.NotNull(result);
-            Assert.Equal(expectedList, result);
-
+            Assert.Equal(2, result.Count);
+            Assert.Equal(tom.Name, result[0].Name);
+            Assert.Equal(alice.Name, result[1].Name);
         }
 
         [Fact]
@@ -87,6 +86,7 @@ namespace Ilyushkina.PersonManager.LogicTest
             //Assert
             Assert.NotNull(result);
             Assert.Equal(testId, result.Id);
+            Assert.Equal(tom.Name, result.Name);
         }
 
         [Fact]
@@ -97,12 +97,11 @@ namespace Ilyushkina.PersonManager.LogicTest
 
             // Act
             var result = _employeeManager.Add(tom).GetAwaiter().GetResult();
-            _context.SaveChanges();
 
             //Assert
             Assert.NotNull(result);
             Assert.NotEmpty(result);
-            Assert.Equal(result[0].Name, tom.Name);
+            Assert.Equal(tom.Name, result[0].Name);
         }
 
 
@@ -114,16 +113,15 @@ namespace Ilyushkina.PersonManager.LogicTest
             _context.People.Add(tom);
             _context.SaveChanges();
             Person updatedTom = new Person { Id = 1, Name = "Tom", Age = 24 };
-            var id = 1;
+            var testId = 1;
 
             // Act
-            var result = _employeeManager.Update(id, updatedTom).GetAwaiter().GetResult();
-            _context.SaveChanges();
+            var result = _employeeManager.Update(testId, updatedTom).GetAwaiter().GetResult();
 
             //Assert
             Assert.NotNull(result);
             Assert.NotEmpty(result);
-            Assert.Equal(result[0].Age, updatedTom.Age);
+            Assert.Equal(updatedTom.Age, result[0].Age);
         }
 
         [Fact]
@@ -131,12 +129,12 @@ namespace Ilyushkina.PersonManager.LogicTest
         {
             // Arrange
             Person tom = new Person { Id = 1, Name = "Tom", Age = 33 };
-            //Person alice = new Person { Id = 2, Name = "Alice", Age = 26 };
+            Person alice = new Person { Id = 2, Name = "Alice", Age = 26 };
             _context.People.Add(tom);
-            //_context.People.Add(alice);
+            _context.People.Add(alice);
             _context.SaveChanges();
             var deleteId = tom.Id;
-            //var expectedId = alice.Id;
+            var expectedId = alice.Id;
 
             // Act
             var result = _employeeManager.Delete(deleteId).GetAwaiter().GetResult();
@@ -144,8 +142,8 @@ namespace Ilyushkina.PersonManager.LogicTest
 
             //Assert
             Assert.NotNull(result);
-            Assert.Empty(result);
-            //Assert.Equal(result[0].Id, expectedId);
+            Assert.Single(result);
+            Assert.Equal(expectedId, result[0].Id);
         }
     }
 }
