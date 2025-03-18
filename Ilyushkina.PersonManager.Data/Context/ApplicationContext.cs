@@ -10,7 +10,8 @@ namespace Ilyushkina.PersonManager.Data.Context
 {
     public class ApplicationContext : DbContext
     {
-        public DbSet<Person> People { get; set; }
+        public DbSet<Person> People { get; set; } 
+        public DbSet<Company> Companies { get; set; } 
 
         public ApplicationContext(DbContextOptions<ApplicationContext> options)
             : base(options)

@@ -3,13 +3,17 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.9.34728.123
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ilyushkina.PersonManager.ConsoleUI", "Ilyushkina.PersonManager.ConsoleUI\Ilyushkina.PersonManager.ConsoleUI.csproj", "{9AE4A45D-0155-4FB5-8928-14C0A0581FD4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ilyushkina.PersonManager.ConsoleUI", "Ilyushkina.PersonManager.ConsoleUI\Ilyushkina.PersonManager.ConsoleUI.csproj", "{9AE4A45D-0155-4FB5-8928-14C0A0581FD4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ilyushkina.PersonManager.Data", "Ilyushkina.PersonManager.Data\Ilyushkina.PersonManager.Data.csproj", "{0AA6A0E4-9419-40F1-AF4F-6D937EE607D7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ilyushkina.PersonManager.Data", "Ilyushkina.PersonManager.Data\Ilyushkina.PersonManager.Data.csproj", "{0AA6A0E4-9419-40F1-AF4F-6D937EE607D7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ilyushkina.PersonManager.Logic", "Ilyushkina.PersonManager.Logic\Ilyushkina.PersonManager.Logic.csproj", "{9F18A0E2-E00E-4A8E-8C61-ECA247ED76B5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ilyushkina.PersonManager.Logic", "Ilyushkina.PersonManager.Logic\Ilyushkina.PersonManager.Logic.csproj", "{9F18A0E2-E00E-4A8E-8C61-ECA247ED76B5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ilyushkina.PersonManager.LogicTest", "Ilyushkina.PersonManager.LogicTest\Ilyushkina.PersonManager.LogicTest.csproj", "{F5431118-28D2-4CF8-B942-100E8D5613EE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ilyushkina.PersonManager.LogicTest", "Ilyushkina.PersonManager.LogicTest\Ilyushkina.PersonManager.LogicTest.csproj", "{F5431118-28D2-4CF8-B942-100E8D5613EE}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ilyushkina.PersonManager.Services", "Ilyushkina.PersonManager.Services\Ilyushkina.PersonManager.Services.csproj", "{750019CB-7A7E-4142-8CA4-2242493905E8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ilyushkina.PersonManager.ServicesTest", "Ilyushkina.PersonManager.ServicesTest\Ilyushkina.PersonManager.ServicesTest.csproj", "{6A85411D-4E3C-4A6C-933B-464954D0AC48}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +37,14 @@ Global
 		{F5431118-28D2-4CF8-B942-100E8D5613EE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F5431118-28D2-4CF8-B942-100E8D5613EE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F5431118-28D2-4CF8-B942-100E8D5613EE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{750019CB-7A7E-4142-8CA4-2242493905E8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{750019CB-7A7E-4142-8CA4-2242493905E8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{750019CB-7A7E-4142-8CA4-2242493905E8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{750019CB-7A7E-4142-8CA4-2242493905E8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6A85411D-4E3C-4A6C-933B-464954D0AC48}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6A85411D-4E3C-4A6C-933B-464954D0AC48}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6A85411D-4E3C-4A6C-933B-464954D0AC48}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6A85411D-4E3C-4A6C-933B-464954D0AC48}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

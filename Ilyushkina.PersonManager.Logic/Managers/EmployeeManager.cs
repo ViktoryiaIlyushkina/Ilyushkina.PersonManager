@@ -38,7 +38,7 @@ namespace Ilyushkina.PersonManager.Logic.Managers
 
             await _context.SaveChangesAsync();
 
-            return await _context.People.AsNoTracking().ToListAsync();
+            return await _context.People.Include(p => p.Company).AsNoTracking().ToListAsync();
         }
 
         public async Task<List<Person>?> Update(int id, Person request)
@@ -71,8 +71,6 @@ namespace Ilyushkina.PersonManager.Logic.Managers
             await _context.SaveChangesAsync();
 
             return await _context.People.ToListAsync();
-
         }
-
     }
 }

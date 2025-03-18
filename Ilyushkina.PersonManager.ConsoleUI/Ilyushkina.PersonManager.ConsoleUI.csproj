@@ -17,10 +17,12 @@
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
+    <PackageReference Include="Moq" Version="4.20.72" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\Ilyushkina.PersonManager.Logic\Ilyushkina.PersonManager.Logic.csproj" />
+    <ProjectReference Include="..\Ilyushkina.PersonManager.Services\Ilyushkina.PersonManager.Services.csproj" />
   </ItemGroup>
 
 </Project>
